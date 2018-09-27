@@ -22,9 +22,9 @@
     [super viewWillAppear:animated];
     
     //避免childViewController影响导航条的显示效果，当前控制器只有在navigationController控制器栈里面才生效
-//    if ([self.navigationController.viewControllers indexOfObject:self] != NSNotFound) {
-//        [self.navigationController setNavigationBarHidden:self.lc_navBarHidden animated:YES];
-//    }
+    if ([self.navigationController.viewControllers indexOfObject:self] != NSNotFound) {
+        [self.navigationController setNavigationBarHidden:self.lc_navBarHidden animated:YES];
+    }
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
