@@ -50,7 +50,12 @@
         [_navigationBar setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
         [self.view addSubview:_navigationBar];
         [_navigationBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_topLayoutGuide);
+            if (@available(iOS 11.0, *)) {
+                make.top.equalTo(self.view.mas_safeAreaLayoutGuideTop);
+            } else {
+                make.top.equalTo(self.mas_topLayoutGuide);
+            }
+            
             make.left.right.equalTo(self.view);
             make.height.mas_equalTo(44);
         }];
