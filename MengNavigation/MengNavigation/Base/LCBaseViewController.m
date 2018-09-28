@@ -17,13 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    if (self.navigationController.viewControllers.count > 1) {
+        self.navigationItem.leftBarButtonItems = @[self.backItem];
+    }
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     //避免childViewController影响导航条的显示效果，当前控制器只有在navigationController控制器栈里面才生效
     if ([self.navigationController.viewControllers indexOfObject:self] != NSNotFound) {
-        [self.navigationController setNavigationBarHidden:self.lc_navBarHidden animated:YES];
+        [self.navigationController setNavigationBarHidden:self.hideNavigationBar animated:YES];
     }
 }
 - (void)didReceiveMemoryWarning {
@@ -34,7 +37,7 @@
 - (UIBarButtonItem *)backItem {
     if (!_backItem) {
         //        _backItem = [[UIBarButtonItem alloc]initWithTitle:@"back" style:(UIBarButtonItemStylePlain) target:self action:@selector(popAction:)];
-        _backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"lcbase_nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popAction:)];
+        _backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"lc_nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popAction:)];
         //        _backItem.tintColor = [UIColor whiteColor];//返回按钮
     }
     return _backItem;

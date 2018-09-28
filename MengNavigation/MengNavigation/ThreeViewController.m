@@ -12,6 +12,8 @@
 @interface ThreeViewController ()
 
 @property (nonatomic,strong) UIButton *button;
+@property (nonatomic,strong) UILabel *disablePopLabel;
+@property (nonatomic,strong) UISwitch *disablePopSwitch;
 
 @end
 
@@ -23,6 +25,8 @@
     self.title = NSStringFromClass([self class]);
     self.view.backgroundColor = [UIColor cyanColor];
     [self button];
+    [self disablePopLabel];
+    [self disablePopSwitch];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,10 +48,39 @@
     }
     return _button;
 }
+- (UILabel *)disablePopLabel {
+    if (!_disablePopLabel) {
+        _disablePopLabel = [[UILabel alloc]init];
+        _disablePopLabel.text = @"是否禁用左边缘拖动返回";
+        [self.view addSubview:_disablePopLabel];
+        [_disablePopLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view).offset(20);
+            make.top.equalTo(self.button.mas_bottom).offset(20);
+        }];
+    }
+    return _disablePopLabel;
+}
+- (UISwitch *)disablePopSwitch {
+    if (!_disablePopSwitch) {
+        _disablePopSwitch = [[UISwitch alloc]init];
+        [_disablePopSwitch addTarget:self action:@selector(disablePopSwitchAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        [self.view addSubview:_disablePopSwitch];
+        [_disablePopSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.disablePopLabel.mas_right).offset(20);
+            make.top.equalTo(self.button.mas_bottom).offset(20);
+        }];
+    }
+    return _disablePopSwitch;
+}
 #pragma mark - Event
 - (void)buttonAction:(UIButton *)button {
-//    TwoViewController *twoVC = [[TwoViewController alloc]init];
-//    [self.navigationController pushViewController:twoVC animated:YES];
+    ThreeViewController *twoVC = [[ThreeViewController alloc]init];
+    [self.navigationController pushViewController:twoVC animated:YES];
+}
+#pragma mark - Action
+- (void)disablePopSwitchAction:(UISwitch *)aSwitch {
+    self.disableInteractivePopGestureRecognizer = aSwitch.on;
+    self.navigationController.interactivePopGestureRecognizer.enabled = !aSwitch.on;
 }
 
 @end

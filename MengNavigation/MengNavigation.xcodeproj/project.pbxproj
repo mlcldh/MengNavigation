@@ -17,6 +17,8 @@
 		8D90C044215CDF250047B7E4 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90C043215CDF250047B7E4 /* ThreeViewController.m */; };
 		8D90C04D215CE1EB0047B7E4 /* LCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90C049215CE1EB0047B7E4 /* LCBaseViewController.m */; };
 		8D90C04E215CE1EB0047B7E4 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90C04B215CE1EB0047B7E4 /* LCNavigationController.m */; };
+		8D925BD8215DCCCE00A85E62 /* LCNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D925BD7215DCCCE00A85E62 /* LCNavigationBar.m */; };
+		8D925BDB215DCFD200A85E62 /* UIColor+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D925BDA215DCFD200A85E62 /* UIColor+LC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		8D90C04A215CE1EB0047B7E4 /* LCNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
 		8D90C04B215CE1EB0047B7E4 /* LCNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
 		8D90C04C215CE1EB0047B7E4 /* LCBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCBaseViewController.h; sourceTree = "<group>"; };
+		8D925BD6215DCCCE00A85E62 /* LCNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavigationBar.h; sourceTree = "<group>"; };
+		8D925BD7215DCCCE00A85E62 /* LCNavigationBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavigationBar.m; sourceTree = "<group>"; };
+		8D925BD9215DCFD200A85E62 /* UIColor+LC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+LC.h"; sourceTree = "<group>"; };
+		8D925BDA215DCFD200A85E62 /* UIColor+LC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LC.m"; sourceTree = "<group>"; };
 		ACDA787FEED8D02750B943EB /* Pods-MengNavigation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MengNavigation.release.xcconfig"; path = "Pods/Target Support Files/Pods-MengNavigation/Pods-MengNavigation.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +105,10 @@
 				8D90C049215CE1EB0047B7E4 /* LCBaseViewController.m */,
 				8D90C04A215CE1EB0047B7E4 /* LCNavigationController.h */,
 				8D90C04B215CE1EB0047B7E4 /* LCNavigationController.m */,
+				8D925BD6215DCCCE00A85E62 /* LCNavigationBar.h */,
+				8D925BD7215DCCCE00A85E62 /* LCNavigationBar.m */,
+				8D925BD9215DCFD200A85E62 /* UIColor+LC.h */,
+				8D925BDA215DCFD200A85E62 /* UIColor+LC.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -212,6 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D925BDB215DCFD200A85E62 /* UIColor+LC.m in Sources */,
+				8D925BD8215DCCCE00A85E62 /* LCNavigationBar.m in Sources */,
 				8D90C04E215CE1EB0047B7E4 /* LCNavigationController.m in Sources */,
 				8D90C04D215CE1EB0047B7E4 /* LCBaseViewController.m in Sources */,
 				8D90C028215CDD360047B7E4 /* ViewController.m in Sources */,

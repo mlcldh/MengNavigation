@@ -10,9 +10,11 @@
 
 @interface LCBaseViewController : UIViewController
 
-//导航栏是否隐藏
-@property (nonatomic, assign) BOOL lc_navBarHidden;
-//返回item
+/**是否隐藏导航栏*/
+@property (nonatomic) BOOL hideNavigationBar;
+/**是否禁用左边缘拖动返回*/
+@property (nonatomic) BOOL disableInteractivePopGestureRecognizer;
+/**返回item*/
 @property (nonatomic, strong) UIBarButtonItem *backItem;
 
 @end
