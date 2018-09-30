@@ -48,6 +48,9 @@
 //        [_navigationBar setShadowImage:[UIImage new]];
         UIImage *colorImage = [[UIColor colorWithRed:46/255.f green:131/255.f blue:243/255.f alpha:1] lc_imageWithSize:CGSizeMake(1, 1)];
         [_navigationBar setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
+//        if (@available(iOS 11.0, *)) {
+//            _navigationBar.prefersLargeTitles = YES;
+//        }
         [self.view addSubview:_navigationBar];
         [_navigationBar mas_makeConstraints:^(MASConstraintMaker *make) {
             if (@available(iOS 11.0, *)) {
@@ -55,7 +58,6 @@
             } else {
                 make.top.equalTo(self.mas_topLayoutGuide);
             }
-            
             make.left.right.equalTo(self.view);
             make.height.mas_equalTo(44);
         }];
