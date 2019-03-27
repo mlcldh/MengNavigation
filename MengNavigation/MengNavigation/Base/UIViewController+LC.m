@@ -14,7 +14,7 @@
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self swizzleMethodWithOriginalSelector:@selector(viewWillAppear:) newSelector:@selector(lc_navViewWillAppear:)];
+        [self swizzleMethodWithOriginalSelector:@selector(viewWillAppear:) newSelector:@selector(lc_viewWillAppear:)];
     });
 }
 + (void)swizzleMethodWithOriginalSelector:(SEL)originalSelector newSelector:(SEL)newSelector {
@@ -29,12 +29,12 @@
         method_exchangeImplementations(originalMethod, newMethod);
     }
 }
-- (void)lc_navViewWillAppear:(BOOL)animated {
+- (void)lc_viewWillAppear:(BOOL)animated {
     //避免childViewController影响导航条的显示效果，当前控制器只有在navigationController控制器栈里面才生效
     if ([self.navigationController.viewControllers indexOfObject:self] != NSNotFound) {
         [self.navigationController setNavigationBarHidden:self.lc_hideNavigationBar animated:YES];
     }
-    [self lc_navViewWillAppear:animated];
+    [self lc_viewWillAppear:animated];
 }
 - (BOOL)lc_hideNavigationBar {
     NSNumber *hideNumber = objc_getAssociatedObject(self, _cmd);
@@ -54,8 +54,5 @@
     self.navigationController.interactivePopGestureRecognizer.enabled = !lc_disableInteractivePopGestureRecognizer;
 //    NSLog(@"%@,%@",self,self.navigationController.topViewController);
 }
-//- (void)lc_setDisableInteractivePopGestureRecognizer:(BOOL)disabled {
-//    self.lc_disableInteractivePopGestureRecognizer = disabled;
-//}
 
 @end

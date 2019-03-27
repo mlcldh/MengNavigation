@@ -10,7 +10,7 @@
 
 @interface LCNavigationBar : UINavigationBar
 
-//导航item
+/**导航item*/
 @property (nonatomic, strong) UINavigationItem *navigationItem;
 
 @end

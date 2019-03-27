@@ -14,7 +14,5 @@
 @property (nonatomic) BOOL lc_hideNavigationBar;
 /**是否禁用左边缘拖动返回*/
 @property (nonatomic) BOOL lc_disableInteractivePopGestureRecognizer;
-///***/
-//- (void)lc_setDisableInteractivePopGestureRecognizer:(BOOL)disabled;
 
 @end
