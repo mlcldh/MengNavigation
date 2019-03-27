@@ -7,6 +7,7 @@
 //
 
 #import "ThreeViewController.h"
+#import "UIViewController+LC.h"
 #import "Masonry.h"
 
 @interface ThreeViewController ()
@@ -79,7 +80,7 @@
 }
 #pragma mark - Action
 - (void)disablePopSwitchAction:(UISwitch *)aSwitch {
-    self.disableInteractivePopGestureRecognizer = aSwitch.on;
+    self.lc_disableInteractivePopGestureRecognizer = aSwitch.on;
     self.navigationController.interactivePopGestureRecognizer.enabled = !aSwitch.on;
 }
 

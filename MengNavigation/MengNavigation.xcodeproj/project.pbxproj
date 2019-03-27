@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7BA1E110529E0E33D22DBC2C /* libPods-MengNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EFA22A25DB08C60398AE32 /* libPods-MengNavigation.a */; };
+		8D79A68D224B15A300D2F881 /* UIViewController+LC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D79A68C224B15A300D2F881 /* UIViewController+LC.m */; };
 		8D90C025215CDD360047B7E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90C024215CDD360047B7E4 /* AppDelegate.m */; };
 		8D90C028215CDD360047B7E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D90C027215CDD360047B7E4 /* ViewController.m */; };
 		8D90C02D215CDD360047B7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D90C02C215CDD360047B7E4 /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		2F09844AF4F2271E752D973F /* Pods-MengNavigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MengNavigation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MengNavigation/Pods-MengNavigation.debug.xcconfig"; sourceTree = "<group>"; };
 		85EFA22A25DB08C60398AE32 /* libPods-MengNavigation.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MengNavigation.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D79A68B224B15A300D2F881 /* UIViewController+LC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LC.h"; sourceTree = "<group>"; };
+		8D79A68C224B15A300D2F881 /* UIViewController+LC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LC.m"; sourceTree = "<group>"; };
 		8D90C020215CDD360047B7E4 /* MengNavigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MengNavigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D90C023215CDD360047B7E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8D90C024215CDD360047B7E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				8D90C04B215CE1EB0047B7E4 /* LCNavigationController.m */,
 				8D925BD6215DCCCE00A85E62 /* LCNavigationBar.h */,
 				8D925BD7215DCCCE00A85E62 /* LCNavigationBar.m */,
+				8D79A68B224B15A300D2F881 /* UIViewController+LC.h */,
+				8D79A68C224B15A300D2F881 /* UIViewController+LC.m */,
 				8D925BD9215DCFD200A85E62 /* UIColor+LC.h */,
 				8D925BDA215DCFD200A85E62 /* UIColor+LC.m */,
 			);
@@ -223,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D925BDB215DCFD200A85E62 /* UIColor+LC.m in Sources */,
+				8D79A68D224B15A300D2F881 /* UIViewController+LC.m in Sources */,
 				8D925BD8215DCCCE00A85E62 /* LCNavigationBar.m in Sources */,
 				8D90C04E215CE1EB0047B7E4 /* LCNavigationController.m in Sources */,
 				8D90C04D215CE1EB0047B7E4 /* LCBaseViewController.m in Sources */,

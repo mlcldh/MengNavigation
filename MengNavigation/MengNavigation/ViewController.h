@@ -8,7 +8,7 @@
 
 #import "LCBaseViewController.h"
 
-@interface ViewController : LCBaseViewController
+@interface ViewController : UIViewController//LCBaseViewController
 
 
 @end

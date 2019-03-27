@@ -7,9 +7,10 @@
 //
 
 #import "LCNavigationController.h"
-#import "LCBaseViewController.h"
+//#import "LCBaseViewController.h"
+#import "UIViewController+LC.h"
 
-@interface LCNavigationController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+@interface LCNavigationController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -22,15 +23,15 @@
     self.interactivePopGestureRecognizer.delegate = nil;
     self.interactivePopGestureRecognizer.enabled = YES;
 }
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return [self.topViewController preferredStatusBarStyle];
-}
-- (UIViewController *)childViewControllerForStatusBarHidden {
-    return self.topViewController;
-}
-- (BOOL)prefersStatusBarHidden {
-    return [self.topViewController prefersStatusBarHidden];
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return [self.topViewController preferredStatusBarStyle];
+//}
+//- (UIViewController *)childViewControllerForStatusBarHidden {
+//    return self.topViewController;
+//}
+//- (BOOL)prefersStatusBarHidden {
+//    return [self.topViewController prefersStatusBarHidden];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -43,15 +44,11 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         NSArray *viewControllers = navigationController.viewControllers;
         if ([viewControllers count] > 0) {
-            LCBaseViewController *rootVC = viewControllers[0];
+            UIViewController *rootVC = viewControllers[0];
             if (viewController == navigationController || (viewController == rootVC && [viewControllers count] == 1)) {
                 self.interactivePopGestureRecognizer.enabled = NO;
             } else {
-                if ([viewController isKindOfClass:[LCBaseViewController class]]) {
-                    self.interactivePopGestureRecognizer.enabled = !((LCBaseViewController *)viewController).disableInteractivePopGestureRecognizer;
-                } else {
-                    self.interactivePopGestureRecognizer.enabled = YES;
-                }
+                self.interactivePopGestureRecognizer.enabled = !viewController.lc_disableInteractivePopGestureRecognizer;
             }
         }
     });

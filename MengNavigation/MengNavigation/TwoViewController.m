@@ -8,6 +8,7 @@
 
 #import "TwoViewController.h"
 #import "ThreeViewController.h"
+#import "UIViewController+LC.h"
 #import "LCNavigationBar.h"
 #import "UIColor+LC.h"
 #import "Masonry.h"
@@ -29,7 +30,7 @@
     self.title = NSStringFromClass([self class]);
     self.view.backgroundColor = [UIColor purpleColor];
     self.navigationItem.leftBarButtonItems = nil;
-    self.hideNavigationBar = YES;
+    self.lc_hideNavigationBar = YES;
     [self button];
     [self disablePopLabel];
     [self disablePopSwitch];
@@ -43,8 +44,9 @@
     if (!_navigationBar) {
         _navigationBar = [[LCNavigationBar alloc]init];
         _navigationBar.navigationItem.title = self.title;
-        self.backItem.tintColor = [UIColor whiteColor];
-        _navigationBar.navigationItem.leftBarButtonItems = @[self.backItem];
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"lc_nav_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popAction:)];
+        backItem.tintColor = [UIColor whiteColor];
+        _navigationBar.navigationItem.leftBarButtonItems = @[backItem];
 //        [_navigationBar setShadowImage:[UIImage new]];
         UIImage *colorImage = [[UIColor colorWithRed:46/255.f green:131/255.f blue:243/255.f alpha:1] lc_imageWithSize:CGSizeMake(1, 1)];
         [_navigationBar setBackgroundImage:colorImage forBarMetrics:UIBarMetricsDefault];
@@ -107,10 +109,11 @@
     ThreeViewController *twoVC = [[ThreeViewController alloc]init];
     [self.navigationController pushViewController:twoVC animated:YES];
 }
-#pragma mark - Action
 - (void)disablePopSwitchAction:(UISwitch *)aSwitch {
-    self.disableInteractivePopGestureRecognizer = aSwitch.on;
-    self.navigationController.interactivePopGestureRecognizer.enabled = !aSwitch.on;
+    self.lc_disableInteractivePopGestureRecognizer = aSwitch.on;
+}
+- (void)popAction:(UIBarButtonItem *)item {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

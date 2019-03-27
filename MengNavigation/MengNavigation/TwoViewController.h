@@ -8,6 +8,6 @@
 
 #import "LCBaseViewController.h"
 
-@interface TwoViewController : LCBaseViewController
+@interface TwoViewController : UIViewController//LCBaseViewController
 
 @end
