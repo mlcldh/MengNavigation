@@ -51,7 +51,9 @@
 }
 - (void)setLc_disableInteractivePopGestureRecognizer:(BOOL)lc_disableInteractivePopGestureRecognizer {
     objc_setAssociatedObject(self, @selector(lc_disableInteractivePopGestureRecognizer), @(lc_disableInteractivePopGestureRecognizer), OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.navigationController.interactivePopGestureRecognizer.enabled = !lc_disableInteractivePopGestureRecognizer;
+    if (self == self.navigationController.topViewController) {//只有是当前展示的控制器，才能调用立即生效
+        self.navigationController.interactivePopGestureRecognizer.enabled = !lc_disableInteractivePopGestureRecognizer;
+    }
 //    NSLog(@"%@,%@",self,self.navigationController.topViewController);
 }
 
